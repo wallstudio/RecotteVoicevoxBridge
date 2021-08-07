@@ -8,7 +8,7 @@ RecotteStudio
 RecotteVoicevoxBridge
 ↓ http api (http://127.0.0.1:50021/audio_query, http://127.0.0.1:50021/synthesis)
 VoiceVoxEngine
-↓ PMW
+↓ PCM
 RecotteVoicevoxBridge
 ↓ Wav file
 RecotteStudio
