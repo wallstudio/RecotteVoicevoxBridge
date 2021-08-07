@@ -15,7 +15,7 @@ node .\node_modules\nexe\index.js -t x64-14.15.3 -i .\dist\index.js
 @REM Pack
 mkdir %ZIP_WOKING_DIR%
 copy README.md %ZIP_WOKING_DIR%\README.md
-copy LICENSE %ZIP_WOKING_DIR%\LICENSE
+copy LICENSE.md %ZIP_WOKING_DIR%\LICENSE.md
 copy RecotteVoicevoxBridge.exe %ZIP_WOKING_DIR%\RecotteVoicevoxBridge.exe
 PowerShell.exe -Command Compress-Archive -Path %ZIP_WOKING_DIR% -DestinationPath %ZIP_FILENAME%
 rd /S /Q %ZIP_WOKING_DIR%
