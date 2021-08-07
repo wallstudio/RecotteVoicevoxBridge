@@ -8,7 +8,7 @@ RecotteStudioとVOICEVOXを連携させるアプリです。
 1. [Releases](https://github.com/wallstudio/RecotteVoicevoxBridge/releases)からRecotteVoicevoxBridgeをダウンロードして適当なディレクトリに展開します。
 1. RecotteStudioの外部アプリ連携を画像のように設定します。（実行コマンドのexeファイルの場所は各環境に合わせてください）
 1. VOICEVOXを起動してください。
-1. RecotteStudioの話者を先ほど設定した設定にしてください。（話者名は 0=ずんだもん, 1=四国めたん です）
+1. RecotteStudioの話者を先ほど設定した設定にしてください。（話者名は 0=四国めたん, 1=ずんだもん です）
 1. CeVIOAPI連携と同様に更新をかけるたびに自動でVOICEVOXから音声データを引っ張って来るようになります。
 
 ![image](img/config1.png)
