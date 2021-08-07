@@ -1,0 +1,22 @@
+{
+  "name": "recottevoicevoxbridge",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wallstudio/RecotteVoicevoxBridge.git"
+  },
+  "author": "up-hash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wallstudio/RecotteVoicevoxBridge/issues"
+  },
+  "homepage": "https://github.com/wallstudio/RecotteVoicevoxBridge#readme",
+  "dependencies": {
+    "nexe": "^4.0.0-beta.18"
+  }
+}
