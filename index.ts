@@ -1,5 +1,6 @@
-import { Configuration, DefaultApi } from "./openapi/index";
+import { FetchAPI, Configuration, DefaultApi } from "./openapi/index";
 import { writeFileSync } from "fs";
+import fetch from "node-fetch";
 
 export async function main()
 {
@@ -13,7 +14,11 @@ export async function main()
         console.log(`speaker: ${speaker}`);
         console.log(`comment: ${comment}`);
 
-        const api = new DefaultApi(new Configuration({ basePath: "http://127.0.0.1:50021" }));
+        const api = new DefaultApi(new Configuration(
+        {
+            basePath: "http://127.0.0.1:50021",
+            fetchApi: fetch as any as FetchAPI,
+        }));
         const query = await api.audioQueryAudioQueryPost({
             text: comment,
             speaker: parseInt(speaker),
