@@ -27,6 +27,8 @@ export async function main()
             speaker: parseInt(speaker),
             audioQuery: query,
         });
+        // HTMLAudioElement.srcに指してるのでWavだと嬉しい（生PCMだとだるい）
+        // https://github.com/Hiroshiba/voicevox/blob/main/src/store/audio.ts#L558
         writeFileSync(output, Buffer.from(await data.arrayBuffer()));
     }
     catch(e)
