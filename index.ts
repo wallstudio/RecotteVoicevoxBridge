@@ -34,11 +34,6 @@ export async function main()
     catch(e)
     {
         console.error(e);
-    }
-    finally
-    {
-        // delay(for dev)
-        let promis = new Promise((r, _) => setTimeout(r, 5000));
-        await promis;
+        await setTimeout(() => {}, 5000);
     }
 }
