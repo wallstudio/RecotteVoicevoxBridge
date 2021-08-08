@@ -49,7 +49,7 @@ JSON型式のファイルを作ります。
 }
 ```
 
-RecotteStudioに設定すする引数に、ファイルをフルパスで指示します。
+RecotteStudioに設定する引数に、ファイルをフルパスで指示します。
 
 ```
 -o "%o" -s "%s" -c "%c" -d "d:\replaced.json"
