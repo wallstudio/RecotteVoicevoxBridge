@@ -1,5 +1,5 @@
 import { FetchAPI, Configuration, DefaultApi } from "./openapi/index";
-import { writeFileSync } from "fs";
+import { writeFileSync, readFileSync } from "fs";
 import fetch from "node-fetch";
 
 export async function main()
@@ -9,11 +9,22 @@ export async function main()
         // -o "%o" -s "%s" -c "%c"
         const output = process.argv[process.argv.indexOf("-o") + 1];
         const speaker = process.argv[process.argv.indexOf("-s") + 1];
-        const comment = process.argv[process.argv.indexOf("-c") + 1];
+        var comment = process.argv[process.argv.indexOf("-c") + 1];
+        const dictionary = process.argv[process.argv.indexOf("-d") + 1];
+        
         console.log(`output: ${output}`);
         console.log(`speaker: ${speaker}`);
         console.log(`comment: ${comment}`);
-
+        console.log(`dictionary: ${dictionary}`);
+        
+        //読めない文字を置き換える
+        if (dictionary.indexOf(".exe") < 0)
+        {
+            const erratas = JSON.parse(readFileSync(dictionary, { encoding: 'utf-8' }));
+            for (const key in erratas) comment = comment.replace(key, erratas[key]);
+            console.log(`fixed: ${comment}`);
+        }
+        
         const api = new DefaultApi(new Configuration(
         {
             basePath: "http://127.0.0.1:50021",

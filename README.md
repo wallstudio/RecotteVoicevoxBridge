@@ -36,6 +36,27 @@ RecotteVoicevoxBridge
 RecotteStudio
 ```
 
+
+## 標準で読め上げできない文字へのケア
+
+VOICEVOXの辞書ではどうしても読めない言葉があるので、事前に置き換えることが出来ます。
+JSON型式のファイルを作ります。
+```
+{
+  "RecotteStudio" : "れこってすたぢお",
+  "VOICEVOX" : "ぼいすぼっくす",
+  "Twitch" : "ついっち"
+}
+```
+
+RecotteStudioに設定すする引数に、ファイルをフルパスで指示します。
+
+```
+-o "%o" -s "%s" -c "%c" -d "d:\replaced.json"
+```
+
+
+
 ## Build
 
 ```
