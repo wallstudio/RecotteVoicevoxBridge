@@ -40,17 +40,19 @@ RecotteStudio
 ## 標準で読め上げできない文字へのケア
 
 VOICEVOXの辞書ではどうしても読めない言葉があるので、事前に置き換えることが出来ます。
-テキストファイル(UTF-8、CRLF)のファイルを作ります。
+JSON型式のファイルを作ります。
 ```
-VOICEVOX,ぼいすぼっくす
-Youtube,ゆーちゅーぶ
+{
+  "RecotteStudio" : "れこってすたぢお",
+  "VOICEVOX" : "ぼいすぼっくす",
+  "Twitch" : "ついっち"
+}
 ```
-
 
 RecotteStudioに設定すする引数に、ファイルをフルパスで指示します。
 
 ```
--o "%o" -s "%s" -c "%c" -d "d:\replaced.csv"
+-o "%o" -s "%s" -c "%c" -d "d:\replaced.json"
 ```
 
 
