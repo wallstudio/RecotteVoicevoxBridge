@@ -26,10 +26,10 @@ export async function main()
         }
         
         const api = new DefaultApi(new Configuration(
-            {
-                basePath: "http://127.0.0.1:50021",
-                fetchApi: fetch as any as FetchAPI,
-            }));
+        {
+            basePath: "http://127.0.0.1:50021",
+            fetchApi: fetch as any as FetchAPI,
+        }));
         const query = await api.audioQueryAudioQueryPost({
             text: comment,
             speaker: parseInt(speaker),
@@ -45,6 +45,6 @@ export async function main()
     catch(e)
     {
         console.error(e);
-        await setTimeout(() => { }, 5000);
+        await setTimeout(() => {}, 5000);
     }
 }
