@@ -36,6 +36,25 @@ RecotteVoicevoxBridge
 RecotteStudio
 ```
 
+
+## 標準で読め上げできない文字へのケア
+
+VOICEVOXの辞書ではどうしても読めない言葉があるので、事前に置き換えることが出来ます。
+テキストファイル(UTF-8、CRLF)のファイルを作ります。
+```
+VOICEVOX,ぼいすぼっくす
+Youtube,ゆーちゅーぶ
+```
+
+
+RecotteStudioに設定すする引数に、ファイルをフルパスで指示します。
+
+```
+-o "%o" -s "%s" -c "%c" -d "d:\replaced.csv"
+```
+
+
+
 ## Build
 
 ```
