@@ -1,0 +1,26 @@
+name: Build
+
+on: [push]
+
+env:
+  ZIP_FILENAME: "recotte_voicevox_bridge.zip"
+  ZIP_WOKING_DIR: "RecotteVoicevoxBridge"
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: npm Install
+      run: npm install
+
+    - name: Build and Pack
+      run: .\build-only.bat
+      
+    - name: Archive
+      uses: actions/upload-artifact@v2
+      with:
+        name: recotte_plugins_foundation
+        path: ${{env.ZIP_WOKING_DIR}}
