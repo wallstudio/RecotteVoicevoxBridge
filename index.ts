@@ -11,11 +11,14 @@ export async function main()
         const speaker = process.argv[process.argv.indexOf("-s") + 1];
         var comment = process.argv[process.argv.indexOf("-c") + 1];
         const dictionary = process.argv[process.argv.indexOf("-d") + 1];
+        var port = process.argv.indexOf("-p") >0 ? process.argv[process.argv.indexOf("-p") + 1] : "50021";
+        var ip = process.argv.indexOf("-i") >0 ? process.argv[process.argv.indexOf("-i") + 1] : "127.0.0.1";
         
         console.log(`output: ${output}`);
         console.log(`speaker: ${speaker}`);
         console.log(`comment: ${comment}`);
         console.log(`dictionary: ${dictionary}`);
+        console.log(`connect to ${ip}:${port}`);
         
         //読めない文字を置き換える
         if (dictionary.indexOf(".exe") < 0)
@@ -27,7 +30,7 @@ export async function main()
         
         const api = new DefaultApi(new Configuration(
         {
-            basePath: "http://127.0.0.1:50021",
+            basePath: `http://${ip}:${port}`,
             fetchApi: fetch as any as FetchAPI,
         }));
         const query = await api.audioQueryAudioQueryPost({

@@ -1,6 +1,6 @@
 # voicevox
 
-https://github.com/Hiroshiba/voicevox/tree/main/src/openapi
+https://github.com/VOICEVOX/voicevox/tree/main/src/openapi
 
 ```
                    GNU LESSER GENERAL PUBLIC LICENSE
